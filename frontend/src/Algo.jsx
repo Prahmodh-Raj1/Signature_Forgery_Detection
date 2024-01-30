@@ -1,9 +1,12 @@
 import React,{useState} from 'react'
 import axios from 'axios';
+
+
 function Cnn() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
   const [result,setResult] = useState('.....');
+  const [probabilities, setProbabilities] = useState(null);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -18,10 +21,11 @@ function Cnn() {
     const formData = new FormData();
     formData.append('file', selectedFile);
 
-    axios.post('http://127.0.0.1:8000/api/upload/cnn', formData)
+    axios.post('http://127.0.0.1:8000/api/upload/algo', formData)
       .then((response) => {
         console.log(response.data);
         setResult(response.data.message);
+        setProbabilities(response.data.prediction);
       })
       .catch((error) => {
         console.log(error);
@@ -40,7 +44,7 @@ function Cnn() {
           </div>
           <div>
             <button onClick={handleUpload} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Upload File
+              Upload and Test
             </button>
           </div>
 
@@ -52,7 +56,7 @@ function Cnn() {
               {imageUrl && <img src={imageUrl} alt="Uploaded File" className="max-w-full h-auto" />}
             </div>
           )}
-          <div className='mb-4'>
+          <div className='mb-4 text-2xl font-bold'>
             {result}
           </div>
         </div>
