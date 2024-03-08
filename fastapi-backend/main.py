@@ -25,7 +25,7 @@ app.add_middleware(
 )
 
 def load_algo_model():
-    loaded_model = pickle.load(open('C:/Users/prahm/Downloads/log_model.sav','rb'))
+    loaded_model = pickle.load(open('/log_model.sav','rb'))
     return loaded_model
 
 """
@@ -37,13 +37,13 @@ except Exception as e:
     print(f"Error: {e}")
 """
 def load_ann_model():
-    model = tf.keras.models.load_model(r'C:/Users/prahm/Downloads/sign_ann_model.hdf5', compile=False)
+    model = tf.keras.models.load_model(r'/sign_ann_model.hdf5', compile=False)
     optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
     model.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
     return model
 
 def load_cnn_model():
-    model = tf.keras.models.load_model(r'C:/Users/prahm/Downloads/cnn_model.hdf5', compile=False)
+    model = tf.keras.models.load_model(r'/cnn_model.hdf5', compile=False)
     optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
     model.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
     return model
