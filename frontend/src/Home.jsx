@@ -23,9 +23,9 @@ const handleClickCNN = ()=>{
         
         <StyledText text= "SIGNATURE FORGERY DETECTION"/>
     </div>
-    <div className="flex space-x-36">
+    <div className="flex space-x-36 mt-12">
     
-    <Button text = "LOGISTIC REGRESSION" color = "#0FF0FC" onClick={handleClickAlgo}/>
+    <Button text = "ML ALGORITHMS" color = "#0FF0FC" onClick={handleClickAlgo}/>
     <Button text = "ARTIFICIAL NEURAL NETWORK" color = "#f44c4c" onClick={handleClickANN}/>
     <Button text = "CONVOLUTIONAL NEURAL NETWORK" color = "#39FF14" onClick={handleClickCNN}/>
     </div>
