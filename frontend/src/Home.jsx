@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
-
-
+import './Home.css'
+import Button from './Button';
+import StyledText from './StyledText';
 function Home() {
     const navigate = useNavigate()
 const handleClickAlgo = ()=>{
@@ -17,20 +18,17 @@ const handleClickCNN = ()=>{
 }
   return (
     <>
+    
     <div className='p-4'>
-        <h2 className="text-5xl font-bold text-black mb-36">Signature Forgery Detection</h2>
+        
+        <StyledText text= "SIGNATURE FORGERY DETECTION"/>
     </div>
-    <div className="flex space-x-4">
-        <button onClick={handleClickAlgo} className="bg-blue-300 hover:bg-blue-500 text-black font-bold py-3 px-6 rounded-lg">
-          ML Algorithms
-        </button>
-        <button onClick={handleClickANN} className="bg-blue-300 hover:bg-blue-500 text-black font-bold py-3 px-6 rounded-lg">
-          Artificial Neural Nets
-        </button>
-        <button onClick={handleClickCNN} className="bg-blue-300 hover:bg-blue-500 text-black font-bold py-3 px-6 rounded-lg">
-          Conv Neural Nets
-        </button>
-      </div>
+    <div className="flex space-x-36">
+    
+    <Button text = "LOGISTIC REGRESSION" color = "#0FF0FC" onClick={handleClickAlgo}/>
+    <Button text = "ARTIFICIAL NEURAL NETWORK" color = "#f44c4c" onClick={handleClickANN}/>
+    <Button text = "CONVOLUTIONAL NEURAL NETWORK" color = "#39FF14" onClick={handleClickCNN}/>
+    </div>
     </>
   )
 }

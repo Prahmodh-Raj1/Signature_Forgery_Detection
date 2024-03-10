@@ -1,0 +1,10 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover !important;
+  background-attachment: fixed; /* Keeps the background fixed */
+  height: 100%;
+}
+
+
