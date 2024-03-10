@@ -12,6 +12,7 @@ const StyledText = ({ text, color }) => {
     color: color || '#ffdd40',
     backgroundClip: 'text',
     fontStyle: 'italic',
+    lineHeight: '1',
   };
 
   return (
